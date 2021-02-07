@@ -21,7 +21,8 @@ os.environ["PROJ_LIB"] = (
     + ";"
     + os.environ["PATH"]
 )
-GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, r"venv\lib\site-packages\osgeo\gdal301.dll")
+GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
