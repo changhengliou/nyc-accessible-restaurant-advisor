@@ -21,6 +21,7 @@ os.environ["PROJ_LIB"] = (
     + ";"
     + os.environ["PATH"]
 )
+# GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, r"venv\lib\site-packages\osgeo\gdal301.dll")
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 
@@ -104,13 +105,22 @@ WSGI_APPLICATION = "nyc_accessible_restaurant_advisor.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd7me0n6hlhkved',
+        'USER': 'nhxaeyereyzsfa',
+        'PASSWORD': '5180107618bb00d3af90a79505fd3df64614d921e23e1ed08213ba44121e300d',
+        'HOST': 'ec2-35-171-57-132.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 AUTH_USER_MODEL = "accessible_restaurant.User"
 
